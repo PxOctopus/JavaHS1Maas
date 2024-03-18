@@ -14,10 +14,6 @@ public abstract class Personel {
     private double maas;
 
 
-    public double maasHesapla() {
-        return this.maas = saatlikUcret * calismaSaati;
-    }
-
     public Personel(String ad, String soyad, String unvan) {
         this.id = UUID.randomUUID().toString();
         this.ad = ad;
@@ -25,15 +21,18 @@ public abstract class Personel {
         this.unvan = unvan;
     }
 
-    public Personel(String ad, String soyad, String unvan, String adres, int calismaSaati, double saatlikUcret, double maas) {
+    public Personel(String ad, String soyad, String adres, int calismaSaati, double saatlikUcret) {
         this.id = UUID.randomUUID().toString();
         this.ad = ad;
         this.soyad = soyad;
-        this.unvan = unvan;
         this.adres = adres;
         this.calismaSaati = calismaSaati;
         this.saatlikUcret = saatlikUcret;
         this.maas = maas;
+    }
+
+    public double maasHesapla() {
+        return this.maas = saatlikUcret * calismaSaati;
     }
 
     public String getId() {

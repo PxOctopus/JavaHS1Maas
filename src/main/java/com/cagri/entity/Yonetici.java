@@ -7,8 +7,8 @@ public class Yonetici extends Personel{
         super(ad, soyad, unvan);
     }
 
-    public Yonetici(String ad, String soyad, String unvan, String adres, int calismaSaati, double saatlikUcret, double maas, double yoneticiBonusu) {
-        super(ad, soyad, unvan, adres, calismaSaati, saatlikUcret, maas);
+    public Yonetici(String ad, String soyad, String adres, int calismaSaati, double saatlikUcret, double yoneticiBonusu) {
+        super(ad, soyad, adres, calismaSaati, saatlikUcret);
         this.yoneticiBonusu = yoneticiBonusu;
         if (saatlikUcret<500){
             saatlikUcret=500;
@@ -18,6 +18,14 @@ public class Yonetici extends Personel{
     @Override
     public double maasHesapla() {
         return super.maasHesapla() + yoneticiBonusu;
+    }
+
+    public double getYoneticiBonusu() {
+        return yoneticiBonusu;
+    }
+
+    public void setYoneticiBonusu(double yoneticiBonusu) {
+        this.yoneticiBonusu = yoneticiBonusu;
     }
 
     @Override
@@ -95,10 +103,15 @@ public class Yonetici extends Personel{
         super.setMaas(maas);
     }
 
-    @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Yonetici{");
-        sb.append("yoneticiBonusu=").append(yoneticiBonusu);
+        sb.append("id='").append(getId()).append('\'');
+        sb.append(", ad='").append(getAd()).append('\'');
+        sb.append(", soyad='").append(getSoyad()).append('\'');
+        sb.append(", unvan='").append(getUnvan()).append('\'');
+        sb.append(", adres='").append(getAdres()).append('\'');
+        sb.append(", calismaSaati=").append(getCalismaSaati());
+        sb.append(", saatlikUcret=").append(getSaatlikUcret());
         sb.append('}');
         return sb.toString();
     }

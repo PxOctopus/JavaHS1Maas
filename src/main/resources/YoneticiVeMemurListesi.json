@@ -1,14 +1,4 @@
-{
-  "person1" :
-  {
-    "unvan" : "Yonetici",
-    "ad" : "Fatih",
-    "soyad" : "Alkan"
-  },
-  "person2" :
-  {
-    "unvan" : "Memur",
-    "ad" : "Beyazit",
-    "soyad" : "Dalgic"
-  }
-}
+[
+  {"ad":"Fatih", "soyad":"Alkan", "unvan": "yonetici"},
+  {"ad":"Beyazit", "soyad":"Dalgic","unvan": "memur"}
+]

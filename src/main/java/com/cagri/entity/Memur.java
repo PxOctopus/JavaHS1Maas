@@ -8,28 +8,28 @@ public class Memur extends Personel {
         super(ad, soyad, unvan);
     }
 
-    public Memur(String ad, String soyad, String unvan, String adres, int calismaSaati, double saatlikUcret, double maas, double mesaiUcret, int memurDerece) {
-        super(ad, soyad, unvan, adres, calismaSaati, saatlikUcret, maas);
-        this.mesaiUcret = mesaiUcret;
+    public Memur(String ad, String soyad, String adres, int calismaSaati, int memurDerece, double saatlikUcret) {
+        super(ad, soyad, adres, calismaSaati, saatlikUcret);
         this.memurDerece = memurDerece;
-        if (memurDerece == 3) {
-            saatlikUcret = 500;
-        } else if (memurDerece == 2) {
-            saatlikUcret = 520;
-        } else if (memurDerece == 1) {
-            saatlikUcret = 540;
+        if (this.memurDerece == 3) {
+            saatlikUcret += 10;
+        } else if (this.memurDerece == 2) {
+            saatlikUcret += 20;
+        } else if (this.memurDerece == 1) {
+            saatlikUcret += 30;
         }
 
         if (calismaSaati > 180) {
-            mesaiUcret = (calismaSaati - 180) * (saatlikUcret * 1.5d);
+            this.mesaiUcret = (calismaSaati - 180) * (saatlikUcret * 1.5d);
         } else {
-            mesaiUcret = 0;
+            this.mesaiUcret = 0;
         }
+
     }
 
     @Override
     public double maasHesapla() {
-        return super.maasHesapla() + mesaiUcret;
+        return (super.maasHesapla() + mesaiUcret);
     }
 
     public double getMesaiUcret() {
@@ -123,11 +123,15 @@ public class Memur extends Personel {
         super.setMaas(maas);
     }
 
-    @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Memur{");
-        sb.append("mesaiUcret=").append(mesaiUcret);
-        sb.append(", memurDerece=").append(memurDerece);
+        sb.append("id='").append(getId()).append('\'');
+        sb.append(", ad='").append(getAd()).append('\'');
+        sb.append(", soyad='").append(getSoyad()).append('\'');
+        sb.append(", unvan='").append(getUnvan()).append('\'');
+        sb.append(", adres='").append(getAdres()).append('\'');
+        sb.append(", calismaSaati=").append(getCalismaSaati());
+        sb.append(", saatlikUcret=").append(getSaatlikUcret());
         sb.append('}');
         return sb.toString();
     }
