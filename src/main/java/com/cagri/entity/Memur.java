@@ -29,7 +29,7 @@ public class Memur extends Personel {
 
     @Override
     public double maasHesapla() {
-        return (super.maasHesapla() + mesaiUcret);
+        return super.maasHesapla() + mesaiUcret;
     }
 
     public double getMesaiUcret() {

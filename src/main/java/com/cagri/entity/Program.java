@@ -25,9 +25,9 @@ public class Program {
         ///// Personel subclass özellik ve metotlarinin kullanilmasi üzere personel nesnelerinin oluşturulmasi
         ///// ve MaasBordro sinifi ile bordro bilgilerinin çıktılanarak dosya sistemine kaydedilmesi:
 
-        Personel yonetici = new Yonetici("Ozan", "Akyol","Ankara",160,550,10000d);
+        Yonetici yonetici = new Yonetici("Ozan", "Akyol","Ankara",160,550,10000d);
         Personel memur1 = new Memur("Erman", "Caglar","Eskisehir",190,1,400);
-        Personel memur2 = new Memur("Hasan", "Inceler","Eskisehir",180,3,400);
+        Personel memur2 = new Memur("Hasan", "Inceler","Eskisehir",190,3,400);
         Personel memur3 = new Memur("Taylan", "Gunes","Eskisehir",180,2,400);
         Collections.addAll(PersonelDB.personelList, yonetici, memur1, memur2, memur3);
 

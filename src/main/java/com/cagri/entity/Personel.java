@@ -28,7 +28,7 @@ public abstract class Personel {
         this.adres = adres;
         this.calismaSaati = calismaSaati;
         this.saatlikUcret = saatlikUcret;
-        this.maas = maas;
+
     }
 
     public double maasHesapla() {

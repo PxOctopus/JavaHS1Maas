@@ -10,9 +10,6 @@ public class Yonetici extends Personel{
     public Yonetici(String ad, String soyad, String adres, int calismaSaati, double saatlikUcret, double yoneticiBonusu) {
         super(ad, soyad, adres, calismaSaati, saatlikUcret);
         this.yoneticiBonusu = yoneticiBonusu;
-        if (saatlikUcret<500){
-            saatlikUcret=500;
-        }
     }
 
     @Override
